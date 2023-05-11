@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500&display=swap");
+:root {
+  font-size: 62.5%;
+  --Light-slate-blue: hsl(252, 100%, 67%);
+  --Light-royal-blue: hsl(241, 81%, 54%);
+  --White: hsl(0, 0%, 100%);
+  --White-300: hsl(0, 0%, 100%, 0.3);
+  --White-500: hsl(0, 0%, 100%, 0.7);
+  --Pale-blue: hsl(221, 100%, 96%);
+  --Light-lavender: hsl(241, 100%, 89%);
+  --Dark-gray-blue: hsl(224, 30%, 27%);
+  --Dark-gray-blue-100: hsl(224, 30%, 27%,0.5);
+
+  --Light-red: hsl(0, 100%, 67%);
+  --Light-red-bg: hsl(0, 100%, 67%,0.1);
+  --Orangey-yellow: hsl(39, 100%, 56%);
+  --Orangey-yellow-bg: hsl(39, 100%, 56%, 0.1);
+  --Green-teal: hsl(166, 100%, 37%);
+  --Green-teal-bg: hsl(166, 100%, 37%, 0.1);
+  --Cobalt-blue: hsl(234, 85%, 45%);
+  --Cobalt-blue-bg: hsl(234, 85%, 45%, 0.1);
+
+  --clr-primary-hsl-500: 256, 72%, 46%;
+  --clr-secondary-hsl-500: 241, 72%, 46%;
+  --clr-primary-500: hsla(var(--clr-primary-hsl-500));
+  --gradient-to-transparent: linear-gradient(
+    var(--clr-primary-500),
+    hsl(var(--clr-secondary-hsl-500), 0)
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 1.8rem;
+}
+.container {
+  height: 100%;
+  display: grid;
+}
+
+.result {
+  color: var(--White);
+  padding: 1rem;
+  background: linear-gradient(var(--Light-slate-blue), var(--Light-royal-blue));
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.result .tittle {
+  font-size: 1.8rem;
+}
+
+.result .percentage {
+  background: var(--gradient-to-transparent);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--White-300);
+  font-size: 1.4rem;
+}
+
+.result .percentage .yourScore {
+  color: var(--White);
+  font-size: 6rem;
+  font-weight: 800;
+}
+
+.result .description {
+  display: grid;
+  gap: 10px;
+  text-align: center;
+  color: var(--White-500);
+  font-size: 1.4rem;
+}
+.result .description .title {
+  font-size: 2.6rem;
+  color: var(--White);
+}
+
+.summary {
+  display: grid;
+  padding: 1rem 2rem;
+  gap: 1.5rem;
+}
+
+.summary_title{
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+}
+
+.summary_item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
+.summary_label{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.7rem;
+}
+.summary_item[data-color="red"]{
+  color: var(--Light-red);
+  background-color: var(--Light-red-bg);
+}
+.summary_item[data-color="orangey"]{
+  color: var(--Orangey-yellow);
+  background-color: var(--Orangey-yellow-bg);
+}
+.summary_item[data-color="green"]{
+  color: var(--Green-teal);
+  background-color: var(--Green-teal-bg);
+}
+.summary_item[data-color="cobalt"]{
+  color: var(--Cobalt-blue);
+  background-color: var(--Cobalt-blue-bg);
+}
+.summary_percentage{
+  color: black;
+  font-weight: 600;
+}
+
+.denominator{
+  font-weight: 600;
+  color: var(--Dark-gray-blue-100);
+}
+
+.btn{
+  padding: 10px;
+  background-color: var(--Dark-gray-blue);
+  display: grid;
+  place-items: center;
+  color: var(--White);
+  border-radius: 4rem;
+}
+
+@media screen and (width > 700px) {
+  body{
+    display: grid;
+    place-items: center;
+  }
+  .container {
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    overflow: hidden;
+    height: 60%;
+    grid-template-columns: 50% 50%;
+  }
+  .result{
+    padding: 2rem;
+  }
+  .result .tittle {
+    font-size: 2.5rem;
+  }
+  .result .percentage {
+    width: 200px;
+    height: 200px;
+  }
+  .summary{
+    padding: 5rem 4rem;
+  }
+  .summary_title{
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .btn{
+    margin-top: 2rem;
+  }
+}
