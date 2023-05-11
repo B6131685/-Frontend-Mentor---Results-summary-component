@@ -163,7 +163,7 @@ body {
     border-radius: 20px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     overflow: hidden;
-    height: 60%;
+    height: auto;
     grid-template-columns: 50% 50%;
   }
   .result{
